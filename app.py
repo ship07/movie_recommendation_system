@@ -7,7 +7,7 @@ import pickle
 
 app=Flask(__name__)
 
-dataset=pd.read_csv('.\clean_dataset\clean_data2.csv')
+dataset=pd.read_csv('./clean_dataset/clean_data2.csv')
 
 def create_similarity():
     cv=CountVectorizer()
