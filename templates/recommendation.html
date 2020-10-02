@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		html,body{
+			background: radial-gradient(circle at center, #134e5e, #85d8ce) ;
+		}
+
+		h1{
+			padding-top: 5%;
+			text-align: center;
+		}
+		#nav{
+			margin:0;
+			padding:0;
+			list-style: none;
+			height: 40px;
+			line-height: 36px;
+			font-family: sans-serif;
+			font-size: 20px;
+		}
+
+		#nav_tab{
+			float: right;
+			border-right: 1px solid #fff;
+		}
+
+		a{
+			display: block;
+			padding: 0 28px;
+			text-decoration: none;
+			background-color: blue;
+			color: white; 
+		}
+		a:hover,.active a{
+			background-color: #F4D03f;
+		}
+
+		.center{
+			text-align: center;
+			list-style-position: inside;
+			font-size: 20px;
+			color:antiquewhite;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+		</style>
+	<title>Recommendation page</title>
+</head>
+<body>
+	<ul id='nav'>
+		<li id='nav_tab'><a href="/contact">Contact</a></li>
+		<li id='nav_tab'><a href="/about">About</a></li>
+		<li id='nav_tab'><a href="/">Home</a></li>
+	</ul>
+	<h1 style='color: #99ff00;'> Movies, that you may like....</h1>
+	{% if result %}
+	<ol class='center'>
+		{% for movie in movies_list %}
+			
+		<li><strong>{{ movie }}</strong></li>
+		
+		{% endfor %}
+		</ol>
+	
+	{% else %}
+	<br>
+	<br>
+	<br>
+	<center><h2>Sorry!We couldn't process your result</h2></center>
+	{% endif %}
+	</body>
+</html>

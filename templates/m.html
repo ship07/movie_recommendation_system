@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		html,body{
+			background-image: url('{{ url_for('static',filename='img/movie.jpg') }}');
+		}
+
+		h1{
+			color: #00B4CC;
+			padding-top: 5%;
+		}
+		ul{
+			margin:0;
+			padding:0;
+			list-style: none;
+			height: 40px;
+			line-height: 36px;
+			font-family: sans-serif;
+			font-size: 21px;
+		}
+
+		li{
+			float: right;
+			border-right: 1px solid #fff;
+		}
+
+		a{
+			display: block;
+			padding: 0 28px;
+			text-decoration: none;
+			background-color: #fff; 
+		}
+
+		a:hover,.active a{
+			background-color: #F4D03f;
+		}
+
+		.search{
+			width: 100%;
+			position: relative;
+			display: flex;
+		}
+
+		#enter{
+			width: 100%;
+			border: 3px solid #00B4CC;
+			border-right: none;
+			padding: 5px;
+			height: 36px;
+			border-radius: 5px 0 0 5px;
+			outline: none;
+			
+		}
+
+		.searchbutton{
+			width: 40px;
+			height: 36px;
+			background: #00B4CC;
+			text-align: center;
+			font-size: 20px;
+
+		}
+
+		.container{
+			text-align: center; 
+			padding-top: 5%;
+		}
+
+		#clear{
+			margin-top: 30px;
+			width: 60px;
+			height: 36px;
+			background: #00B4CC;
+			border-radius: 8px;
+
+
+		}
+
+	</style>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body>
+	 <br/>
+	  	<ul>
+      	<li><a href="/contact">Contact</a></li>
+      	<li><a href="/about">About</a></li>
+      	<li class="active"><a href="/">Home</a></li>
+      </ul>
+		 <center><h1>Movie Recommendation System </h1></center>
+		 		<div class="container">				
+				<form action="/" method='POST'>
+		 		<div class="search">                 
+		 			<input type="text"  id="enter" oninvalid="alert('You must fill out the field!');" placeholder="search here...."  name="movie" required>
+		 			<button type="submit" class="searchbutton">
+		 			<i class="fa fa-search"></i>
+				 </button>
+				 
+				</div>
+			<input type='reset' id='clear' value='Clear' onclick="windows.location.reload()">	
+			</div>	
+				
+			
+         
+
+</body>
+</html>
